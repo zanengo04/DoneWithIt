@@ -21,6 +21,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "description": "First React Native app",
+    "githubUrl": "https://github.com/zanengo04/DoneWithIt",
+    "android": {
+      "package": "com.zanengo.DoneWithIt"
     }
   }
 }
