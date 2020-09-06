@@ -1,9 +1,13 @@
 import React from 'react'
 import Constants from 'expo-constants'
-import { StyleSheet, SafeAreaView } from 'react-native'
+import { StyleSheet, SafeAreaView, View, Platform } from 'react-native'
 export default function Screen({children, style}) {
     return (
-        <SafeAreaView style={[styles.screen, style]}>{children}</SafeAreaView>
+        <SafeAreaView style={[styles.screen, style]}>
+        <View style= {Platform.OS ==='ios'&& style}>
+            {children}
+        </View>
+        </SafeAreaView>
     )
 }
 
