@@ -15,11 +15,18 @@ import AccountScreen from './app/screens/AccountScreen'
 import ListingsScreen from './app/screens/ListingsScreen';
 import AppTextInput from './app/components/AppTextInput'
 import AppPicker from './app/components/AppPicker'
+
+const categories=[
+  {label: 'Furniture', value: 1},
+  {label: 'Clothing', value: 2},
+  {label: 'Cameras', value: 3},
+];
+
 export default function App() {
   const [isNew, setIsNew] = useState(false)
   return (
     <Screen>
-      <AppPicker icon='apps' placeholder='Category'/>
+      <AppPicker items={categories} icon='apps' placeholder='Category'/>
       <AppTextInput icon='email' placeholder='email'/>
     </Screen>
   );
