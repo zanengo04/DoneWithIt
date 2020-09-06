@@ -7,6 +7,9 @@ import Screen from '../components/Screen'
 import AppTextInput from '../components/AppTextInput'
 import AppButton from '../components/AppButton'
 import AppText from '../components/AppText'
+import ErrorMessage from '../components/ErrorMessage'
+import AppFormField from '../components/AppFormField'
+import SubmitButton from '../components/SubmitButton'
 
 const validationSchema = Yup.object().shape({
     email: Yup.string().required().email().label("Email"),
@@ -24,33 +27,27 @@ export default function LoginScreen() {
                 onSubmit={values => console.log(values)}
                 validationSchema={validationSchema}
             >
-                {({handleChange, handleSubmit, errors}) => (
+                {({handleChange, handleSubmit, errors, setFieldTouched, touched}) => (
                     <>
-                        <AppTextInput 
-                            placeholder="Email"
-                            icon="email"
+                        <AppFormField 
+                            name="email"
                             autoCapitalize = "none"
                             autoCorrect={false}
+                            icon="email"
+                            placeholder="Email"
                             keyboardType="email-address"
-                            onChangeText={handleChange("email")}
-                            //only works on ios
                             textContentType="emailAddress"
                         />
-                        <AppText style={{color: 'red'}}>{errors.email}</AppText>
-                        <AppTextInput 
+                        <AppFormField
+                            name="password" 
                             autoCapitalize="none"
                             autoCorrect={false}
                             icon="lock"
                             placeholder="Password"
-                            textContentType="password"
                             secureTextEntry
-                            onChangeText={handleChange("password")}
+                            textContentType="password"
                         />
-                        <AppText style={{color: 'red'}}>{errors.password}</AppText>
-                        <AppButton 
-                            title="login"
-                            onPress={handleSubmit}
-                        />
+                        <SubmitButton title="Login" />
                     </>
                 )}
             </Formik>
