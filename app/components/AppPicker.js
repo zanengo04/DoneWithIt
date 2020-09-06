@@ -10,7 +10,7 @@ import PickerItem from './PickerItem'
 
 
 
-export default function AppPicker({icon, placeholder, items}) {
+export default function AppPicker({icon, placeholder, selectedItem, onSelectedItem, items}) {
     const [modalVisible, setModalVisible] = useState(false)
     return (
         <>
@@ -22,7 +22,7 @@ export default function AppPicker({icon, placeholder, items}) {
                             size={20} 
                             color={colors.medium} 
                             style={styles.icon}/>}
-                    <AppText style={styles.text}>{placeholder}</AppText>
+                    <AppText style={styles.text}>{selectedItem? selectedItem.label : placeholder}</AppText>
                     <MaterialCommunityIcons 
                             name="chevron-down" 
                             size={20} 
@@ -35,11 +35,15 @@ export default function AppPicker({icon, placeholder, items}) {
                         <FlatList 
                             data={items}
                             keyExtractor={item=>item.value.toString()}
-                            renderItem={({item})=>
+                            renderItem={({item})=> (
                                 <PickerItem 
                                     label={item.label}
-                                    onPress= {() => console.log(item)}
-                                /> }
+                                    onPress= {() =>{
+                                        setModalVisible(false);
+                                        onSelectedItem(item);
+                                    }}
+                                /> 
+                            )}
                         /> 
                 </Screen>
             </Modal>
