@@ -16,12 +16,25 @@ import ListingsScreen from './app/screens/ListingsScreen';
 import AppTextInput from './app/components/AppTextInput'
 import AppPicker from './app/components/AppPicker'
 import LoginScreen from './app/screens/LoginScreen';
+import ListingEditScreen from './app/screens/ListingEditScreen';
+import AppFormPicker from './app/components/forms'
 
+const categories = [
+  {label: "Furniture", value: 1},
+  {label: "Clothing", value: 2},
+  {label: "Camera", value: 3},
 
+]
 export default function App() {
-  const [category, setCategory] = useState()
   return (
-    <LoginScreen />
+    // 
+    // <Screen>
+    //   <AppPicker items={categories} icon="apps" placeholder="Category" />
+    // </Screen>
+    <Screen>
+      <ListingEditScreen />
+    </Screen>
+    
   );
 }
 

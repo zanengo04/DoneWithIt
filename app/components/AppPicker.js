@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { View, TextInput, StyleSheet, Platform, TouchableWithoutFeedback, Modal, Button, FlatList } from 'react-native'
+import { View, StyleSheet, TouchableWithoutFeedback, Modal, Button, FlatList } from 'react-native'
 import {MaterialCommunityIcons} from '@expo/vector-icons'
 
 import defaultStyle from '../config/styles'
