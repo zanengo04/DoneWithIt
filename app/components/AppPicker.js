@@ -4,11 +4,21 @@ import {MaterialCommunityIcons} from '@expo/vector-icons'
 
 import defaultStyle from '../config/styles'
 import colors from '../config/colors'
-export default function AppTextInput({icon, ...otherProps}) {
+import AppText from './AppText'
+export default function AppPicker({icon, placeholder, ...otherProps}) {
     return (
         <View style = {styles.container}>
-            {icon && <MaterialCommunityIcons name={icon} size={20} color={colors.medium} style={styles.icon}/>}
-            <TextInput style={defaultStyle.text}{...otherProps}/>
+            {icon && 
+                <MaterialCommunityIcons 
+                    name={icon} 
+                    size={20} 
+                    color={colors.medium} 
+                    style={styles.icon}/>}
+            <AppText style={styles.text}>{placeholder}</AppText>
+            <MaterialCommunityIcons 
+                    name="chevron-down" 
+                    size={20} 
+                    color={colors.medium}/>
         </View>
     )
 }
@@ -25,5 +35,8 @@ const styles = StyleSheet.create({
     icon:{
         marginRight: 20,
         
+    },
+    text:{
+        flex:1
     }
 })
