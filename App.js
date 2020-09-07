@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { View, TextInput, Text, Switch } from 'react-native';
+import {useFormikContext} from 'formik'
 
 import ViewImageScreen from './app/screens/ViewImageScreen';
 import WelcomeScreen from './app/screens/WelcomeScreen';
@@ -27,13 +28,7 @@ const categories = [
 ]
 export default function App() {
   return (
-    // 
-    // <Screen>
-    //   <AppPicker items={categories} icon="apps" placeholder="Category" />
-    // </Screen>
-    <Screen>
-      <ListingEditScreen />
-    </Screen>
+    <ListingEditScreen />
     
   );
 }

@@ -5,6 +5,8 @@ import * as Yup from 'yup'
 import {AppForm,AppFormField,AppFormPicker,SubmitButton} from '../components/forms'
 import Screen from '../components/Screen'
 
+
+
 const validationSchema = Yup.object().shape(
     {
         title:Yup.string().required().min(1).label("Title"),
@@ -47,7 +49,7 @@ export default function ListingEditScreen() {
                 />
                 <AppFormPicker 
                     items={categories}
-                    name= 'category'
+                    name= "category"
                     placeholder ="Category"
                 />
                 <AppFormField 
@@ -65,6 +67,6 @@ export default function ListingEditScreen() {
 
 const styles = StyleSheet.create({
     container:{
-
+        padding:15
     }
 })
