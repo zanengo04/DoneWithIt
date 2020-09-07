@@ -2,27 +2,26 @@ import React, {useState} from 'react'
 import { View, StyleSheet, TouchableWithoutFeedback, Modal, Button, FlatList } from 'react-native'
 import {MaterialCommunityIcons} from '@expo/vector-icons'
 
-import defaultStyle from '../config/styles'
 import colors from '../config/colors'
 import AppText from './AppText'
 import Screen from './Screen'
 import PickerItem from './PickerItem'
 
 
-
-export default function AppPicker({icon, placeholder, selectedItem, onSelectedItem, items}) {
+export default function AppPicker({icon, placeholder, selectedItem, onSelectedItem, items, width="100%"}) {
     const [modalVisible, setModalVisible] = useState(false)
     return (
         <>
             <TouchableWithoutFeedback onPress={() => setModalVisible(true)}>
-                <View style = {styles.container}>
+                <View style = {[styles.container, {width}]}>
                     {icon && 
                         <MaterialCommunityIcons 
                             name={icon} 
                             size={20} 
                             color={colors.medium} 
                             style={styles.icon}/>}
-                    <AppText style={styles.text}>{selectedItem? selectedItem.label : placeholder}</AppText>
+                    {selectedItem ?  <AppText style={styles.text}>{selectedItem.label}</AppText> :
+                    <AppText style={styles.placeholder}>{placeholder}</AppText>}
                     <MaterialCommunityIcons 
                             name="chevron-down" 
                             size={20} 
@@ -56,7 +55,6 @@ const styles = StyleSheet.create({
         backgroundColor: colors.light,
         borderRadius: 25,
         flexDirection: 'row',
-        width: '100%',
         padding: 15,
         marginVertical: 10,
     },
@@ -65,6 +63,10 @@ const styles = StyleSheet.create({
         
     },
     text:{
+        flex:1
+    },
+    placeholder:{
+        color: colors.medium,
         flex:1
     }
 })
