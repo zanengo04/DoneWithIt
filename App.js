@@ -22,6 +22,7 @@ import LoginScreen from './app/screens/LoginScreen';
 import ListingEditScreen from './app/screens/ListingEditScreen';
 import AppFormPicker from './app/components/forms'
 import ImageInput from './app/components/ImageInput';
+import ImageInputList from './app/components/ImageInputList';
 const categories = [
   {label: "Furniture", value: 1},
   {label: "Clothing", value: 2},
@@ -29,25 +30,22 @@ const categories = [
 
 ]
 export default function App() {
-  const [imageUri, setImageUri] = useState()
-
-  const selectImage = async() =>{
-    try {
-      const result = await ImagePicker.launchImageLibraryAsync()
-      if (!result.cancelled)
-        setImageUri(result.uri)
-    } catch (error) {
-      console.log('Error reading an image', error)
-      
-    }
+  const [imageUris, setImageUris] = useState([])
+  const handleAdd = uri => {
+    setImageUris([...imageUris, uri])
   }
+  const handleRemove = uri =>{
+    setImageUris(imageUris.filter(imageUris => imageUris != uri))
+  }
+
 
   return (
     <Screen>
-      <Button title="Select Image" onPress={selectImage} />
-      <ImageInput 
-        imageUri={imageUri}
-        onChangeImage={uri => setImageUri(uri)}
+      
+      <ImageInputList 
+        imageUri={imageUris}
+        onAddImage={handleAdd}
+        onRemoveImage={handleRemove}
       />
     </Screen>
     
