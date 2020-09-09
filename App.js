@@ -1,6 +1,8 @@
-import React, {useState} from 'react';
-import { View, TextInput, Text, Switch } from 'react-native';
+import React, {useState, useEffect} from 'react';
+import { View, TextInput, Text, Switch, Image, Button } from 'react-native';
 import {useFormikContext} from 'formik'
+import * as ImagePicker from 'expo-image-picker'
+import * as Permission from 'expo-permissions'
 
 import ViewImageScreen from './app/screens/ViewImageScreen';
 import WelcomeScreen from './app/screens/WelcomeScreen';
@@ -19,7 +21,7 @@ import AppPicker from './app/components/AppPicker'
 import LoginScreen from './app/screens/LoginScreen';
 import ListingEditScreen from './app/screens/ListingEditScreen';
 import AppFormPicker from './app/components/forms'
-
+import ImageInput from './app/components/ImageInput';
 const categories = [
   {label: "Furniture", value: 1},
   {label: "Clothing", value: 2},
@@ -27,8 +29,27 @@ const categories = [
 
 ]
 export default function App() {
+  const [imageUri, setImageUri] = useState()
+
+  const selectImage = async() =>{
+    try {
+      const result = await ImagePicker.launchImageLibraryAsync()
+      if (!result.cancelled)
+        setImageUri(result.uri)
+    } catch (error) {
+      console.log('Error reading an image', error)
+      
+    }
+  }
+
   return (
-    <ListingEditScreen />
+    <Screen>
+      <Button title="Select Image" onPress={selectImage} />
+      <ImageInput 
+        imageUri={imageUri}
+        onChangeImage={uri => setImageUri(uri)}
+      />
+    </Screen>
     
   );
 }
