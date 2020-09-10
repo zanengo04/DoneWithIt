@@ -7,6 +7,8 @@ export default {
     text:{
         color: colors.dark,
         fontSize:18,
-        fontFamily: Platform.OS === 'android' ? "Roboto" : "Avenir"
+        fontFamily: Platform.OS === 'android' ? "Roboto" : "Avenir",
+        width:'100%',
+        alignSelf: 'flex-end'
     },
 }

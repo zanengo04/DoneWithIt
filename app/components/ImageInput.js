@@ -3,6 +3,7 @@ import { View,StyleSheet, Image, TouchableWithoutFeedback, Alert } from 'react-n
 import colors from '../config/colors'
 import {MaterialCommunityIcons} from '@expo/vector-icons'
 import * as ImagePicker from 'expo-image-picker'
+
 export default function ImageInput({imageUri, onChangeImage}) {
     useEffect(() => {
         requestPermission();
@@ -53,6 +54,6 @@ const styles = StyleSheet.create({
     },
     image:{
         width:'100%',
-        height: '100%'
+        height: '100%',
     }
 })

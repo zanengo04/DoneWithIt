@@ -9,8 +9,9 @@ export default function AppTextInput({icon, width="100%", ...otherProps}) {
         <View style = {[styles.container, {width}]}>
             {icon && <MaterialCommunityIcons name={icon} size={20} color={colors.medium} style={styles.icon}/>}
             <TextInput 
-            placeholderTextColor={colors.medium}
-            style={defaultStyle.text}{...otherProps}/>
+                placeholderTextColor={colors.medium}
+                style={defaultStyle.text}{...otherProps}
+            />
         </View>
     )
 }
@@ -26,5 +27,5 @@ const styles = StyleSheet.create({
     icon:{
         marginRight: 20,
         
-    }
+    },
 })

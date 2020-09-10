@@ -29,9 +29,12 @@ export default function ImageInputList({imageUri=[], onRemoveImage, onAddImage})
 
 const styles= StyleSheet.create({
    container:{
-       flexDirection: 'row'
+       flexDirection: 'row',
+       
+       
    },
    image:{
-       marginRight:10
+       marginRight:10,
+       
    }
 });
