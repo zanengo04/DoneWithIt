@@ -1,6 +1,7 @@
 import React from 'react'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 import {MaterialCommunityIcons} from '@expo/vector-icons'
+import routes from '../navigation/Routes'
 
 import ListingEditScreen from '../screens/ListingEditScreen';
 import FeedNavigator from './FeedNavigator';
@@ -22,7 +23,7 @@ export default  AppNavigator = () => (
             name="ListingEdit" 
             component={ListingEditScreen} 
             options={({navigation}) => ({
-                tabBarButton: () => <NewListingButton onPress={() => navigation.navigate("ListingEdit")}/>,
+                tabBarButton: () => <NewListingButton onPress={() => navigation.navigate(routes.LISTING_EDIT)}/>,
                 tabBarIcon: ({color, size}) => <MaterialCommunityIcons name="plus-circle" color={color} size={size} />
             })} 
         />
