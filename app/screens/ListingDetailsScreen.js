@@ -4,6 +4,7 @@ import { View, Image, StyleSheet } from 'react-native'
 import AppText from '../components/AppText'
 import colors from '../config/colors'
 import ListItem from '../components/ListItem'
+
 export default function ListingDetailsScreen({route}) {
     const listing = route.params;
     return (
