@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "DoneWithIt",
-    "slug": "DoneWithIt",
+    "name": "Load Free",
+    "slug": "load-free",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./app/assets/icon.png",
@@ -22,7 +22,7 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "description": "First React Native app",
+    "description": "Front end design for ecommerce app that allows users to unload and sell items that they no longer need.",
     "githubUrl": "https://github.com/zanengo04/DoneWithIt",
     "android": {
       "package": "com.zanengo.DoneWithIt"

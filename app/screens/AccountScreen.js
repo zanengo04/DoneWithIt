@@ -30,9 +30,9 @@ export default function AccountScreen({navigation}) {
         <Screen style={styles.screen}>
             <View style={styles.container}>
                 <ListItem 
-                    title ="Mosh"
-                    subTitle ="www@gmail.com"
-                    image={require('../assets/mosh.jpg')}
+                    title ="Quoc"
+                    subTitle ="ngoqu@bc.edu"
+                    image={require('../assets/profile.jpg')}
                 />
             </View>
             <View style={styles.container}>

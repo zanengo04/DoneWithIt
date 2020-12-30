@@ -16,8 +16,8 @@ export default function ListingDetailsScreen({route}) {
                 <View style={styles.userContainer}>
 
                     <ListItem
-                        image={require("../assets/mosh.jpg")}
-                        title="Mosh"
+                        image={require("../assets/profile.jpg")}
+                        title="Quoc"
                         subTitle= '5 Listings'
                     />
                 </View>

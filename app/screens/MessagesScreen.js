@@ -9,16 +9,16 @@ import ListItemDeleteAction from '../components/ListItemDeleteAction'
 const intialMessages =[
     {
         id:1,
-        title: 'T1aksfhlaidfiladshflkadsjflajsdkfh',
-        description: 'T1',
-        image: require('../assets/mosh.jpg')
+        title: 'Inquiry to buy',
+        description: 'How much are you selling the item for',
+        image: require('../assets/profile.jpg')
     },
 
     {
         id:2,
-        title: 'T2',
-        description: 'T2',
-        image: require('../assets/mosh.jpg')
+        title: 'Following up',
+        description: 'Is the item still available for sale?',
+        image: require('../assets/profile.jpg')
     },
 ]
 
@@ -50,7 +50,7 @@ export default function MessagesScreen() {
                             id:2,
                             title: 'T2',
                             description: 'T2',
-                            image: require('../assets/mosh.jpg')
+                            image: require('../assets/profile.jpg')
                         }
                     ])
                 }}
